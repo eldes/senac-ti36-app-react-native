@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import FloatingActionButton from '../components/FloatingActionButton';
 import Item from '../models/item';
 import { StackParams } from './navigator';
 
@@ -207,12 +208,9 @@ const HomeScreen: React.FC<Props> = (props) => {
         renderItem={renderItem}
         data={data}
       />
-      <View style={styles.botoes}>
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Novo Item</Text>
-        </TouchableOpacity>
-      </View>
+      <FloatingActionButton />
     </View>
+     
   )
 };
 
