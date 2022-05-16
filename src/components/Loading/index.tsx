@@ -1,13 +1,25 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
 import { Text, View } from 'react-native';
 import styles from './styles';
 
-const Loading: FunctionComponent = () => {
+type Props = {
+	show?: boolean
+};
+
+const Loading: React.FC<Props> = (props) => {
 	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>Carregando...</Text>
-		</View>
+		<>
+		  {(props.show) && (
+				<View style={styles.container}>
+					<Text style={styles.text}>Carregando...</Text>
+				</View>
+			)}
+		</>
 	);
+};
+
+Loading.defaultProps = {
+	show: false
 };
 
 export default Loading;

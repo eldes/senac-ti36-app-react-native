@@ -76,6 +76,10 @@ const HomeScreen: React.FC<Props> = (props) => {
     )
   }
 
+  const botaoCriarPressionado = () => {
+    props.navigation.navigate('CriarItem');
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -83,7 +87,7 @@ const HomeScreen: React.FC<Props> = (props) => {
         renderItem={renderItem}
         data={data}
       />
-      <FloatingActionButton />
+      <FloatingActionButton onPress={botaoCriarPressionado} />
     </View>
      
   )

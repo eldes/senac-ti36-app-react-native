@@ -4,6 +4,7 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Item from '../models/item';
 import AlterarItemScreen from './alterar-item';
+import CriarItemScreen from './criar-item';
 import HomeScreen from './home';
 import ItemScreen from './item';
 import LoginScreen from './login';
@@ -52,6 +53,13 @@ const Navigator: React.FC = () => {
         />
         <Stack.Screen name='Item' component={ItemScreen} />
         <Stack.Screen
+          name="CriarItem"
+          component={CriarItemScreen}
+          options={{
+            title: 'Novo Item'
+          }}
+        />
+        <Stack.Screen
           name='AlterarItem'
           component={AlterarItemScreen}
           options={{
@@ -66,6 +74,7 @@ type StackParams = {
 	Home: undefined,
 	Login: undefined,
   Item: {item: Item},
+  CriarItem: undefined,
   AlterarItem: {item: Item},
 };
 
