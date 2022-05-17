@@ -19,6 +19,7 @@ const ItemForm: React.FC<Props> = (props) => {
 		if (nome && descricao) {
 			if (props.onSalvar) {
 				props.onSalvar({
+					id: props.item?.id,
 					nome,
 					descricao
 				});
