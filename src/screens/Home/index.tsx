@@ -2,9 +2,10 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import FloatingActionButton from '../components/FloatingActionButton';
-import Item from '../models/item';
-import { StackParams } from './navigator';
+import FloatingActionButton from '../../components/FloatingActionButton';
+import Loading from '../../components/Loading';
+import Item from '../../models/item';
+import { StackParams } from '../navigator';
 
 const styles = StyleSheet.create({
   container: {
@@ -51,17 +52,22 @@ type Props = NativeStackScreenProps<StackParams, 'Home'>;
 
 const HomeScreen: React.FC<Props> = (props) => {
 
+	const [loading, setLoading] = useState(false);
+
   const [data, setData] = useState<Item[]>([]);
 
   useEffect(() => {
+		setLoading(true);
     axios.get<Item[]>('http://localhost:4000/api/itens')
     .then((res) => {
       setData(res.data);
+			setLoading(false);
     })
     .catch((error) => {
       console.log(error);
+			setLoading(false);
     });
-  },[data]);
+  },[]);
 
   const renderItem: ListRenderItem<Item> = ({item}) => {
     
@@ -88,6 +94,7 @@ const HomeScreen: React.FC<Props> = (props) => {
         data={data}
       />
       <FloatingActionButton onPress={botaoCriarPressionado} />
+			<Loading show={loading} />
     </View>
      
   )

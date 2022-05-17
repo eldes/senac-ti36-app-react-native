@@ -5,7 +5,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Item from '../models/item';
 import AlterarItemScreen from './alterar-item';
 import CriarItemScreen from './criar-item';
-import HomeScreen from './home';
+import HomeScreen from './Home';
 import ItemScreen from './item';
 import LoginScreen from './login';
 
