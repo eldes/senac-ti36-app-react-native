@@ -1,6 +1,7 @@
+import { useFocusEffect } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { FlatList, ListRenderItem, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import FloatingActionButton from '../../components/FloatingActionButton';
 import Loading from '../../components/Loading';
@@ -56,7 +57,7 @@ const HomeScreen: React.FC<Props> = (props) => {
 
   const [data, setData] = useState<Item[]>([]);
 
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
 		setLoading(true);
     axios.get<Item[]>('http://localhost:4000/api/itens')
     .then((res) => {
@@ -67,7 +68,7 @@ const HomeScreen: React.FC<Props> = (props) => {
       console.log(error);
 			setLoading(false);
     });
-  },[]);
+  }, []));
 
   const renderItem: ListRenderItem<Item> = ({item}) => {
     
