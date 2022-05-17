@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import ItemForm from '../../components/ItemForm';
 import Item from '../../models/item';
-import ItemScreen from '../item';
+import ItemScreen from '../Item';
 import { StackParams } from '../navigator';
 import styles from './styles';
 

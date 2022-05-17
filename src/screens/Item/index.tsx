@@ -1,37 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useEffect } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { StackParams } from './navigator';
-
-const styles = StyleSheet.create({
-	container: {
-		flexGrow: 1,
-	},
-
-	conteudo: {
-		flexGrow: 1,
-	},
-
-	botoes: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-
-  botao: {
-    marginVertical: 16,
-    backgroundColor: '#000',
-    margin: 8,
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-
-  botaoTexto: {
-    color: '#fff',
-    fontSize: 18,
-    textTransform: 'uppercase',
-  },
-});
+import { StackParams } from '../navigator';
+import styles from './styles';
 
 type Props = NativeStackScreenProps<StackParams, 'Item'>;
 

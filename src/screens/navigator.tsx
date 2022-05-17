@@ -3,10 +3,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Item from '../models/item';
-import AlterarItemScreen from './alterar-item';
+import AlterarItemScreen from './AlterarItem';
 import CriarItemScreen from './criar-item';
 import HomeScreen from './Home';
-import ItemScreen from './item';
+import ItemScreen from './Item';
 import LoginScreen from './login';
 
 const styles = StyleSheet.create({
