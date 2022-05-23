@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
 
+  syncButton: {
+    padding: 8,
+  },
+
   flatList: {
     flexGrow: 1,
     height: 1,

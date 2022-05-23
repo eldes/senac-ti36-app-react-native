@@ -19,8 +19,8 @@ const HomeScreen: React.FC<Props> = (props) => {
   props.navigation.setOptions({
     headerTitle: 'Itens App',
     headerRight: () => (
-      <TouchableOpacity>
-        <Icon name="add" size={20} color="#fff" />
+      <TouchableOpacity style={styles.syncButton} onPress={botaoSyncPressionado}>
+        <Icon name="sync" size={20} color="#fff" />
       </TouchableOpacity>
       )
   });
@@ -29,7 +29,7 @@ const HomeScreen: React.FC<Props> = (props) => {
 
   const [data, setData] = useState<Item[]>([]);
 
-  useFocusEffect(useCallback(() => {
+  const recarregaItens = useCallback(() => {
 		setLoading(true);
     axios.get<Item[]>('http://localhost:4000/api/itens')
     .then((res) => {
@@ -40,7 +40,13 @@ const HomeScreen: React.FC<Props> = (props) => {
       console.log(error);
 			setLoading(false);
     });
-  }, []));
+  }, []);
+
+  useFocusEffect(recarregaItens);
+
+  const botaoSyncPressionado = () => {
+    recarregaItens();
+  };
 
   const renderItem: ListRenderItem<Item> = ({item}) => {
     
