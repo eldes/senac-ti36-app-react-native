@@ -42,14 +42,6 @@ const Navigator: React.FC = () => {
         <Stack.Screen
           name='Home'
           component={HomeScreen}
-          options={{
-            headerTitle: 'Itens App',
-            headerRight: () => (
-              <TouchableOpacity style={styles.headerBarAddButton}>
-                <Text style={styles.headerBarAddButtonText}>+</Text>
-              </TouchableOpacity>
-              )
-          }}
         />
         <Stack.Screen name='Item' component={ItemScreen} />
         <Stack.Screen

@@ -8,10 +8,22 @@ import Loading from '../../components/Loading';
 import Item from '../../models/item';
 import { StackParams } from '../navigator';
 import styles from './styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 type Props = NativeStackScreenProps<StackParams, 'Home'>;
 
 const HomeScreen: React.FC<Props> = (props) => {
+
+  Icon.loadFont();
+
+  props.navigation.setOptions({
+    headerTitle: 'Itens App',
+    headerRight: () => (
+      <TouchableOpacity>
+        <Icon name="add" size={20} color="#fff" />
+      </TouchableOpacity>
+      )
+  });
 
 	const [loading, setLoading] = useState(false);
 
