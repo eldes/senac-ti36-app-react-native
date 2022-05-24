@@ -17,7 +17,7 @@ const CriarItemScreen: React.FC<Props> = (props) => {
 		axios.post('http://localhost:4000/api/itens', item)
 		.then(() => {
 			setLoading(false);
-			props.navigation.navigate('Home');
+			props.navigation.pop(1);
 		})
 		.catch((error) => {
 			setLoading(false);
