@@ -16,10 +16,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
 	},
-	texto: {
-		color: '#fff',
-		fontSize: 24,
-	},
 });
 
 export default styles;

@@ -72,7 +72,7 @@ const HomeScreen: React.FC<Props> = (props) => {
         renderItem={renderItem}
         data={data}
       />
-      <FloatingActionButton onPress={botaoCriarPressionado} />
+      <FloatingActionButton iconName='add' onPress={botaoCriarPressionado} />
 			<Loading show={loading} />
     </View>
      
