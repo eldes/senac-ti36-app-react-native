@@ -9,6 +9,7 @@ import Item from '../../models/item';
 import { StackParams } from '../navigator';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import FlatListItem, { FlatListItemPressEventHandler } from '../../components/FlatListItem';
 
 type Props = NativeStackScreenProps<StackParams, 'Home'>;
 
@@ -50,14 +51,12 @@ const HomeScreen: React.FC<Props> = (props) => {
 
   const renderItem: ListRenderItem<Item> = ({item}) => {
     
-    const itemPressionado = () => {
+    const itemPressionado: FlatListItemPressEventHandler  = () => {
       props.navigation.navigate('Item', {item: item});
     };
 
     return (
-      <TouchableOpacity onPress={itemPressionado} style={styles.listItem}>
-        <Text style={styles.listItemText}>{item.nome}</Text>
-      </TouchableOpacity>
+      <FlatListItem item={item} onPress={itemPressionado} />
     )
   }
 

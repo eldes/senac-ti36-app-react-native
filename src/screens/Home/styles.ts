@@ -14,16 +14,6 @@ const styles = StyleSheet.create({
     height: 1,
   },
 
-  listItem: {
-    backgroundColor: '#ff0',
-    padding: 20,
-    marginBottom: 20,
-  },
-
-  listItemText: {
-    fontSize: 24,
-  },
-
   botoes: {
     flexDirection: 'row',
     justifyContent: 'center',
