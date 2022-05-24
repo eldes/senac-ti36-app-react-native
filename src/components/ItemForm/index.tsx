@@ -34,12 +34,14 @@ const ItemForm: React.FC<Props> = (props) => {
 					style={styles.campoTexto}
 					value={nome}
 					onChangeText={setNome}
+					placeholder='Nome'
 				/>
 				<TextInput
 					style={styles.areaTexto}
 						multiline={true}
 						value={descricao}
 						onChangeText={setDescricao}
+						placeholder='Descrição'
 					/>
 			</View>
 			<View style={styles.botoes}>
